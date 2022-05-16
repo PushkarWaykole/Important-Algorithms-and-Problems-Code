@@ -34,17 +34,18 @@ void kruskals(struct edge input[],int n,int E){
     //Sort the input array in ascending order based on weights 
     sortByWeight(input,E);
 
-    //Creating an output array of size E-1
+    //Creating an output array to tore the edges added in MST of size E-1
     edge output[n-1];
     
     //parent array to check for loop in mst after adding the edge
     int parent[n];
+    //Initializing the array as the index 
     for(int i=0;i<n;i++){
         parent[i]=i;
     }
 
     int count=0; //To store the count of edges added in mst
-    int i=0; //To check the current edge
+    int i=0; //To check the current edge(picked up edge)
 
     //check till the count is not n-1
     //that is till n=all the vertices are not included

@@ -16,7 +16,7 @@ struct Graph{
     vector<Edge> edges;
 };
 
-//Disjoint set
+//Unordered map for parent and rank
 unordered_map<char,char> Parent;
 unordered_map<char,int> Rank; //To store the depth of the tree
 
@@ -64,6 +64,8 @@ void Kruskal(Graph& g){
 
     //sorting the edges in ascending order
     sort(g.edges.begin(),g.edges.end(),[](Edge x,Edge y) {return x.weight < y.weight;});
+
+    //Adding edges one by one to MST
     for(Edge e:g.edges){
         char root1=Find(e.vertex1);
         char root2=Find(e.vertex2);
