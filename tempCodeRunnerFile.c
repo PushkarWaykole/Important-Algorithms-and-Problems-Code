@@ -40,12 +40,12 @@ int coinChangeDP(int coins[],int n_coins,int amount){
         }
     }
 
-    for(int i=0;i<=n_coins;i++){
-            for(int j=0;j<=amount;j++){
-                printf("%d ",dp[i][j]);
-            }
-            printf("\n");
-    }
+    // for(int i=0;i<=n_coins;i++){
+    //         for(int j=0;j<=amount;j++){
+    //             printf("%d ",dp[i][j]);
+    //         }
+    //         printf("\n");
+    // }
     return dp[n_coins][amount]>1e4 ? -1:dp[n_coins][amount];
 
 }
